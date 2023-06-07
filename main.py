@@ -116,5 +116,33 @@ def juros_simples():
     valor_final = valor_inicial * (1 + (taxa_decimal * periodo))
 
     print("O valor final com juros simples é R$:", round(valor_final, 2))
-juros_simples()
+
+def calcular_media_e_desvio_padrao():
+    def calcular_media():
+        dados = input("Insira os dados separados por espaço: ").split()
+        dados = [float(x) for x in dados]
+        soma = sum(dados)
+        media = soma / len(dados)
+        return media
+
+    def calcular_desvio_padrao():
+        media = calcular_media()  # Corrigido: remover o argumento 'dados'
+        dados = input("Insira os dados separados por espaço: ").split()
+        dados = [float(x) for x in dados]
+        soma_diferencas_quadrados = sum((x - media) ** 2 for x in dados)
+        desvio_padrao = (soma_diferencas_quadrados / len(dados)) ** 0.5
+        return desvio_padrao
+
+    media = calcular_media()
+    print("A média é: ", media)
+    desvio_padrao = calcular_desvio_padrao()
+    print("O desvio padrão é: ", desvio_padrao)
+
+calcular_media_e_desvio_padrao()
+
+
+
+
+
+
 
