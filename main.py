@@ -72,5 +72,33 @@ def calculandoLambda():
     tempoMedioEsperaLEFO = tempoMedioDeAtendimento
     print("Tempo médio de espera na fila (LEFO): ", tempoMedioEsperaLEFO)
 
+def binario_para_decimal(binario):
+    decimal = 0
+    for digito in binario:
+        decimal = decimal * 2 + int(digito)
+    return decimal
 
-calculandoLambda()
+def converter_binario_decimal():
+    binario = input("Digite um número binário: ")
+    decimal = binario_para_decimal(binario)
+    print(f"Binário: {binario} -> Decimal: {decimal}")
+
+def decimal_para_binario(decimal):
+    binario = ""
+    while decimal > 0:
+        binario = str(decimal % 2) + binario
+        decimal = decimal // 2
+    return binario
+
+def converter_decimal_binario():
+    decimal = int(input("Digite um número decimal: "))
+    binario = decimal_para_binario(decimal)
+    print(f"Decimal: {decimal} -> Binário: {binario}")
+
+# Exemplo de uso
+converter_binario_decimal()
+converter_decimal_binario()
+
+
+
+
