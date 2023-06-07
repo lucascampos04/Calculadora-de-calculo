@@ -126,19 +126,37 @@ def calcular_media_e_desvio_padrao():
         return media
 
     def calcular_desvio_padrao():
-        media = calcular_media()  # Corrigido: remover o argumento 'dados'
+        media = calcular_media()  
         dados = input("Insira os dados separados por espaço: ").split()
         dados = [float(x) for x in dados]
         soma_diferencas_quadrados = sum((x - media) ** 2 for x in dados)
         desvio_padrao = (soma_diferencas_quadrados / len(dados)) ** 0.5
         return desvio_padrao
+    
+    def calcular_probabilidade():
+        evento_favoravel = float(input("Insira o numero de eventos favoraveis: "))
+        evento_amostral = float(input("Insira o numero do espaço amostral"))
+        probabilidade = evento_favoravel / evento_amostral
+        return probabilidade
 
     media = calcular_media()
     print("A média é: ", media)
     desvio_padrao = calcular_desvio_padrao()
     print("O desvio padrão é: ", desvio_padrao)
+    probabilidade = calcular_probabilidade()
+    print("Probabilidade: ", probabilidade)
 
-calcular_media_e_desvio_padrao()
+def bhaskara():
+    a = float(input("Insira o valor de a: "))
+    b = float(input("Insira o valor de b: "))
+    c = float(input("Insira o valor de c: "))
+    delta = b**2 - 4 * a * c
+    x1 = -b + np.sqrt(delta) / 2 * a
+    x2 = -b - np.sqrt(delta) / 2 * a
+    
+    print(f"x1: {x1}\nx2: {x2}")
+
+bhaskara()
 
 
 
