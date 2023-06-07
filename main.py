@@ -95,7 +95,6 @@ def converter_decimal_binario():
     binario = decimal_para_binario(decimal)
     print(f"Decimal: {decimal} -> Binário: {binario}")
 
-# Exemplo de uso
 converter_binario_decimal()
 converter_decimal_binario()
 
