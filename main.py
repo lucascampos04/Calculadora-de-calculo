@@ -95,9 +95,14 @@ def converter_decimal_binario():
     binario = decimal_para_binario(decimal)
     print(f"Decimal: {decimal} -> Binário: {binario}")
 
-converter_binario_decimal()
-converter_decimal_binario()
+def juros_composto():
+    valor_inicial = float(input("Valor inicial: "))
+    taxa_juros = float(input("Taxa de juros: "))
+    periodo = float(input("Período: "))
 
-
-
-
+    taxa_decimal = taxa_juros / 100
+    
+    valor_final = valor_inicial * (1 + taxa_decimal) ** periodo
+    
+    print("O valor final com juros compostos é R$:", round(valor_final, 2))
+juros_composto()
