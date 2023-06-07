@@ -105,4 +105,16 @@ def juros_composto():
     valor_final = valor_inicial * (1 + taxa_decimal) ** periodo
     
     print("O valor final com juros compostos é R$:", round(valor_final, 2))
-juros_composto()
+
+def juros_simples():
+    valor_inicial = float(input("Valor inicial: "))
+    taxa_juros = float(input("Taxa de juros: "))
+    periodo = float(input("Período: "))
+
+    taxa_decimal = taxa_juros / 100
+
+    valor_final = valor_inicial * (1 + (taxa_decimal * periodo))
+
+    print("O valor final com juros simples é R$:", round(valor_final, 2))
+juros_simples()
+
