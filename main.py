@@ -156,7 +156,80 @@ def bhaskara():
     
     print(f"x1: {x1}\nx2: {x2}")
 
-bhaskara()
+def vetores():
+    def soma_vetores():
+        print("Soma de vetores")
+        a1 = float(input("Valor de a1: "))
+        a2 = float(input("Valor de a2: "))
+        a3 = float(input("Valor de a3: "))
+        b1 = float(input("Valor de b1: "))
+        b2 = float(input("Valor de b2: "))
+        b3 = float(input("Valor de b3: "))
+        somando_ab = (a1 + b1, a2 + b2, a3 + b3)
+        return somando_ab
+    resultado_soma = soma_vetores()
+    print("Resultado da soma dos vetores: ", resultado_soma)
+    
+    def subtraindo_vetores():
+        print("\nSubtração de vetores")
+        a1 = float(input("Valor de a1: "))
+        a2 = float(input("Valor de a2: "))
+        a3 = float(input("Valor de a3: "))
+        b1 = float(input("Valor de b1: "))
+        b2 = float(input("Valor de b2: "))
+        b3 = float(input("Valor de b3: "))
+        subtraindo_ab = (a1 - b1, a2 - b2, a3 - b3)
+        return subtraindo_ab
+    resultado_sub = subtraindo_vetores()
+    print("Resultado da subtração dos vetores: ", resultado_sub)
+
+    def multiplicando_por_escalar_vetores():
+        print("\nMultiplicação de vetores")
+        escalar = float(input("Valor do escalar: "))
+        a1 = float(input("Valor de a1: "))
+        a2 = float(input("Valor de a2: "))
+        a3 = float(input("Valor de a3: "))
+        multiplicando_vetor = (escalar*a1, escalar*a2, escalar*a3)
+        return multiplicando_vetor
+    multipli_vetor = multiplicando_por_escalar_vetores()
+    print("Resultado da multiplicação escalar dos vetores: ", multipli_vetor)
+
+    def produto_escalar_interno():
+        print("\nVetor de produto escalar interno")
+        a1 = float(input("Valor de a1: "))
+        a2 = float(input("Valor de a2: "))
+        a3 = float(input("Valor de a3: "))
+        b1 = float(input("Valor de b1: "))
+        b2 = float(input("Valor de b2: "))
+        b3 = float(input("Valor de b3: "))
+        produto_escalar_inter = ((a1*b1) + (a2*b2) + (a3*b3))
+        return produto_escalar_inter
+    produto_escalar_inter = produto_escalar_interno()
+    print("Resultado da multiplicação de um produto escalar interno: ", produto_escalar_inter)
+    
+    def produto_escalar_externo():
+        print("\nVetor de produto vetorial")
+        a1 = float(input("Valor de a1: "))
+        a2 = float(input("Valor de a2: "))
+        a3 = float(input("Valor de a3: "))
+        b1 = float(input("Valor de b1: "))
+        b2 = float(input("Valor de b2: "))
+        b3 = float(input("Valor de b3: "))
+        c1 = a2 * b3 - a3 * b2
+        c2 = a3 * b1 - a1 * b3
+        c3 = a1 * b2 - a2 * b1
+        vetor_vetorial = [c1, c2, c3]
+        resultado = [float(x) for x in vetor_vetorial]
+        return resultado
+    resultado = produto_escalar_externo()
+    print("Resultado do vetor escalar externo: ", resultado)
+    print("")
+    
+    resultados_vetores = [resultado_soma, resultado_sub, multipli_vetor, produto_escalar_inter, resultado]
+    print(f"Soma: {resultados_vetores[0]} \nSubtração: {resultados_vetores[1]} \nMultiplicação: {resultados_vetores[2]} \nVetor interno: {resultados_vetores[3]} \nVetor externo: {resultados_vetores[4]}")
+
+
+vetores()
 
 
 
