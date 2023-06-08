@@ -228,6 +228,8 @@ def vetores():
     resultados_vetores = [resultado_soma, resultado_sub, multipli_vetor, produto_escalar_inter, resultado]
     print(f"Soma: {resultados_vetores[0]} \nSubtração: {resultados_vetores[1]} \nMultiplicação: {resultados_vetores[2]} \nVetor interno: {resultados_vetores[3]} \nVetor externo: {resultados_vetores[4]}")
 
+def matriz():
+    pass
 
 vetores()
 
