@@ -231,7 +231,7 @@ def vetores():
 def matriz():
     pass
 
-vetores()
+matriz()
 
 
 
