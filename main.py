@@ -156,7 +156,7 @@ def bhaskara():
     
     print(f"x1: {x1}\nx2: {x2}")
 
-def vetores():
+def vetoresContasBasicas():
     def soma_vetores():
         print("Soma de vetores")
         a1 = float(input("Valor de a1: "))
@@ -228,10 +228,26 @@ def vetores():
     resultados_vetores = [resultado_soma, resultado_sub, multipli_vetor, produto_escalar_inter, resultado]
     print(f"Soma: {resultados_vetores[0]} \nSubtração: {resultados_vetores[1]} \nMultiplicação: {resultados_vetores[2]} \nVetor interno: {resultados_vetores[3]} \nVetor externo: {resultados_vetores[4]}")
 
-def matriz():
-    pass
+def vetores():
+    def moduloDeVetores():
+        print("Coloque os valores de v1 e v2 separadamente: ")
+        valoresV1 = input("V1: ").split()
+        v1 = [float(x) for x in valoresV1]
+        valoresV2 = input("V2: ").split()
+        v2 = [float(y) for y in valoresV2]
+        moduloV1 = np.sqrt(sum(valoresV1**2))
+        return v1, v2
+    
+        
 
-matriz()
+    resultado = moduloDeVetores()
+    print("Vetor v1:", resultado)
+
+vetores()
+
+
+
+
 
 
 
