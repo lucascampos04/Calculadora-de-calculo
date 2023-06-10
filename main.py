@@ -228,6 +228,10 @@ def vetoresContasBasicas():
     resultados_vetores = [resultado_soma, resultado_sub, multipli_vetor, produto_escalar_inter, resultado]
     print(f"Soma: {resultados_vetores[0]} \nSubtração: {resultados_vetores[1]} \nMultiplicação: {resultados_vetores[2]} \nVetor interno: {resultados_vetores[3]} \nVetor externo: {resultados_vetores[4]}")
 
+import numpy as np
+
+import numpy as np
+
 def vetores():
     def moduloDeVetores():
         print("Coloque os valores de v1 e v2 separadamente: ")
@@ -235,15 +239,15 @@ def vetores():
         v1 = [float(x) for x in valoresV1]
         valoresV2 = input("V2: ").split()
         v2 = [float(y) for y in valoresV2]
-        moduloV1 = np.sqrt(sum(valoresV1**2))
-        return v1, v2
+        moduloV1 = np.sqrt(sum([x**2 for x in v1]))
+        moduloV2 = np.sqrt(sum([y**2 for y in v2]))
+        return v1, v2, moduloV1, moduloV2
     
-        
-
     resultado = moduloDeVetores()
-    print("Vetor v1:", resultado)
+    print(f"Vetores: {resultado[0]}, {resultado[1]}\nResultado V1: {resultado[2]}\nResultado V2: {resultado[3]}")
 
 vetores()
+
 
 
 
