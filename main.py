@@ -1,4 +1,5 @@
 import numpy as np
+import math 
 
 def calculandoLambda():
     print("TEORIA DAS FILAS \n")
@@ -146,6 +147,21 @@ def calcular_media_e_desvio_padrao():
     probabilidade = calcular_probabilidade()
     print("Probabilidade: ", probabilidade)
 
+def trigonometria():
+    def calular_trigonometria():
+        angulo = float(input("Insira o valor do angulo em graus: "))
+        radianos = math.radians(angulo)
+        cos = math.cos(radianos)
+        sen = math.sin(radianos)
+        tan = math.tan(radianos)
+        return cos, sen, tan
+    
+    resultado = calular_trigonometria()
+    print("Cosseno: ", resultado[0])
+    print("Seno: ", resultado[1])
+    print("Tangente: ", resultado[2])
+trigonometria()
+    
 def bhaskara():
     a = float(input("Insira o valor de a: "))
     b = float(input("Insira o valor de b: "))
@@ -257,7 +273,8 @@ def vetores():
     print(f"Vetores: {resultado[0]}, {resultado[1]}\nResultado V1: {resultado[2]}\nResultado V2: {resultado[3]}")
     print(f"Ângulo entre os vetores: {angulo} graus")
 
-vetores()
+
+
 
 
 
