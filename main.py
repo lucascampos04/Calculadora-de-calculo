@@ -240,10 +240,22 @@ def vetores():
         return v1, v2, moduloV1, moduloV2
     
     def anguloTeta():
-        pass
-
+        print("Coloque os vetores separadamente: ")
+        vetoresV1 = input("V1: ").split()
+        v1 = [float(x) for x in vetoresV1]
+        vetoresV2 = input("V2: ").split()
+        v2 = [float(y) for y in vetoresV2]
+        moduloV1 = np.sqrt(sum(x**2 for x in v1))
+        moduloV2 = np.sqrt(sum(y**2 for y in v2))
+        produto_escalar = np.dot(v1, v2)
+        cos_teta = produto_escalar / (moduloV1 * moduloV2)
+        angulo = np.arccos(cos_teta) * 180 / np.pi
+        return angulo 
+        
     resultado = moduloDeVetores()
+    angulo = anguloTeta()
     print(f"Vetores: {resultado[0]}, {resultado[1]}\nResultado V1: {resultado[2]}\nResultado V2: {resultado[3]}")
+    print(f"Ângulo entre os vetores: {angulo} graus")
 
 vetores()
 
