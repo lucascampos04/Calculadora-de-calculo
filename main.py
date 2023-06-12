@@ -160,7 +160,6 @@ def trigonometria():
     print("Cosseno: ", resultado[0])
     print("Seno: ", resultado[1])
     print("Tangente: ", resultado[2])
-trigonometria()
     
 def bhaskara():
     a = float(input("Insira o valor de a: "))
@@ -267,14 +266,27 @@ def vetores():
         cos_teta = produto_escalar / (moduloV1 * moduloV2)
         angulo = np.arccos(cos_teta) * 180 / np.pi
         return angulo 
-        
-    resultado = moduloDeVetores()
-    angulo = anguloTeta()
-    print(f"Vetores: {resultado[0]}, {resultado[1]}\nResultado V1: {resultado[2]}\nResultado V2: {resultado[3]}")
-    print(f"Ângulo entre os vetores: {angulo} graus")
+    # resultado = moduloDeVetores()
+    # angulo = anguloTeta()
+    # print(f"Vetores: {resultado[0]}, {resultado[1]}\nResultado V1: {resultado[2]}\nResultado V2: {resultado[3]}")
+    # print(f"Ângulo entre os vetores: {angulo} graus")
 
+    def projecaoOrtogonal():
+        print("Coloque os valores de w separadamente: ")
+        valoresW = input("W: ").split()
+        w = [float(x) for x in valoresW]
+        print("Coloque os valores de u separadamente: ")
+        valoresU = input("U: ").split()
+        u = [float(y) for y in valoresU]
+        produto_escalar = np.dot(w, u)
+        u_norm_squared = np.dot(u, u)
+        resultado = (produto_escalar / u_norm_squared) * np.array(u)
+        return resultado
 
+    resultado_proje = projecaoOrtogonal()
+    print("Resultado da projeção ortogonal: ", resultado_proje)
 
+vetores()
 
 
 
