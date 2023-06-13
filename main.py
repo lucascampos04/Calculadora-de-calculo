@@ -1,5 +1,7 @@
 import numpy as np
 import math 
+import tkinter as tk
+from tkinter import messagebox
 
 def calculandoLambda():
     print("TEORIA DAS FILAS \n")
@@ -106,7 +108,7 @@ def juros_composto():
     valor_final = valor_inicial * (1 + taxa_decimal) ** periodo
     
     print("O valor final com juros compostos é R$:", round(valor_final, 2))
-
+ss
 def juros_simples():
     valor_inicial = float(input("Valor inicial: "))
     taxa_juros = float(input("Taxa de juros: "))
@@ -474,7 +476,6 @@ def matriz():
         print("Matriz transposta:")
         print(transposta)
 
-matriz()
 
         
 
