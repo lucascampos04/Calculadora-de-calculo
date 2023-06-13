@@ -287,7 +287,7 @@ def vetores():
     print("Resultado da projeção ortogonal: ", resultado_proje)
 
 def matriz():
-    escolher = int(input("Soma :\n1 - 2x2 | 2 - 3x3:\nSubtração:\n3 - 2x2 | 4 - 3x3: "))
+    escolher = int(input("Soma :\n1 - 2x2 | 2 - 3x3:\nSubtração:\n3 - 2x2 | 4 - 3x3:\nMultiplicação:\n5 - 2x2 | 6 - 3x3: "))
 
     if escolher == 1:
         def somaMatriz2x2():
@@ -370,7 +370,6 @@ def matriz():
                 a11_matriz1 - a11_matriz2,
                 a12_matriz1 - a12_matriz2,
                 a13_matriz1 - a13_matriz2,
-                print("\n"),
                 a21_matriz1 - a21_matriz2,
                 a22_matriz1 - a22_matriz2,
                 a23_matriz1 - a23_matriz2
@@ -380,6 +379,28 @@ def matriz():
         resultado_subtracao = subtracaoMatriz3x3()
         print("Resultado da subtração:")
         print(resultado_subtracao)
+    elif escolher == 5:
+        def multiplicacao2x2():
+            a11_matriz1 = float(input("Valor de a11: "))
+            a12_matriz1 = float(input("Valor de a12: "))
+            a21_matriz1 = float(input("Valor de a21: "))
+            a22_matriz1 = float(input("Valor de a22: "))
+
+            a11_matriz2 = float(input("Valor de a11: "))
+            a12_matriz2 = float(input("Valor de a12: "))
+            a21_matriz2 = float(input("Valor de a21: "))
+            a22_matriz2 = float(input("Valor de a22: "))
+
+            resultado = [
+                a11_matriz1 * a11_matriz2 + a12_matriz1 * a21_matriz2,
+                a11_matriz1 * a12_matriz2 + a12_matriz1 * a22_matriz2,
+                a21_matriz1 * a11_matriz2 + a22_matriz1 * a21_matriz2,
+                a21_matriz1 * a12_matriz2 + a22_matriz1 * a22_matriz2
+            ]
+            return resultado
+        resultado_final = multiplicacao2x2()
+        print(f"O resultado da multiplicação {resultado_final}")
+            
 matriz()
 
         
