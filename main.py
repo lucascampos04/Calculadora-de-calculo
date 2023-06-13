@@ -287,11 +287,101 @@ def vetores():
     print("Resultado da projeção ortogonal: ", resultado_proje)
 
 def matriz():
-    escolher = input("1 - 2x2 | 2 - 3x3")
+    escolher = int(input("Soma :\n1 - 2x2 | 2 - 3x3:\nSubtração:\n3 - 2x2 | 4 - 3x3: "))
+
     if escolher == 1:
-        print("Hello word")
-    elif escolher == "2":
-        print("Hello word")
+        def somaMatriz2x2():
+            a11_matriz1 = float(input("Valor de a11: "))
+            a12_matriz1 = float(input("Valor de a12: "))
+            a21_matriz1 = float(input("Valor de a21: "))
+            a22_matriz1 = float(input("Valor de a22: "))
+
+            return [a11_matriz1, a12_matriz1, a21_matriz1, a22_matriz1]
+
+        matriz1 = somaMatriz2x2()
+        matriz2 = somaMatriz2x2()
+
+        soma = [a + b for a, b in zip(matriz1, matriz2)]
+
+        resultado_final = matriz1, matriz2, soma
+        print(f"Matriz 1: {resultado_final[0]}")
+        print(f"Matriz 2: {resultado_final[1]}")
+        print(f"Soma: {resultado_final[2]}")
+
+    elif escolher == 2:
+        def matriz3x3():
+            a11_matriz1 = float(input("Valor de a11: "))
+            a12_matriz1 = float(input("Valor de a12: "))
+            a13_matriz1 = float(input("valor de a13: "))
+            a21_matriz1 = float(input("Valor de a21: "))
+            a22_matriz1 = float(input("Valor de a22: "))
+            a23_matriz1 = float(input("Valor de a23: "))
+
+            return [a11_matriz1, a12_matriz1, a13_matriz1, a21_matriz1, a22_matriz1, a23_matriz1]
+
+        matriz1 = matriz3x3()
+        matriz2 = matriz3x3()
+
+        soma = [a + b for a, b in zip(matriz1, matriz2)]
+
+        resultado_final = matriz1, matriz2, soma
+        print(f"Matriz 1: {resultado_final[0]}")
+        print(f"Matriz 2: {resultado_final[1]}")
+        print(f"Soma: {resultado_final[2]}")
+    elif escolher == 3:
+        def subtracaoMatriz2x2():
+            a11_matriz1 = float(input("Valor de a11: "))
+            a12_matriz1 = float(input("Valor de a12: "))
+            a21_matriz1 = float(input("Valor de a21: "))
+            a22_matriz1 = float(input("Valor de a22: "))
+
+            a11_matriz2 = float(input("Valor de a11: "))
+            a12_matriz2 = float(input("Valor de a12: "))
+            a21_matriz2 = float(input("Valor de a21: "))
+            a22_matriz2 = float(input("Valor de a22: "))
+
+            resultado = [
+                a11_matriz1 - a11_matriz2,
+                a12_matriz1 - a12_matriz2,
+                a21_matriz1 - a21_matriz2,
+                a22_matriz1 - a22_matriz2
+            ]
+            return resultado
+        resultado_subtracao = subtracaoMatriz2x2()
+        print("Resultado da subtração:")
+        print(resultado_subtracao)
+    elif escolher == 4:
+        def subtracaoMatriz3x3():
+            a11_matriz1 = float(input("Valor de a11: "))
+            a12_matriz1 = float(input("Valor de a12: "))
+            a13_matriz1 = float(input("Valor de a13: "))
+            a21_matriz1 = float(input("Valor de a21: "))
+            a22_matriz1 = float(input("Valor de a22: "))
+            a23_matriz1 = float(input("Valor de a23: "))
+
+            a11_matriz2 = float(input("Valor de a11: "))
+            a12_matriz2 = float(input("Valor de a12: "))
+            a13_matriz2 = float(input("Valor de a13: "))
+            a21_matriz2 = float(input("Valor de a21: "))
+            a22_matriz2 = float(input("Valor de a22: "))
+            a23_matriz2 = float(input("Valor de a23: "))
+
+            resultado = [
+                a11_matriz1 - a11_matriz2,
+                a12_matriz1 - a12_matriz2,
+                a13_matriz1 - a13_matriz2,
+                print("\n"),
+                a21_matriz1 - a21_matriz2,
+                a22_matriz1 - a22_matriz2,
+                a23_matriz1 - a23_matriz2
+            ]
+
+            return resultado
+        resultado_subtracao = subtracaoMatriz3x3()
+        print("Resultado da subtração:")
+        print(resultado_subtracao)
+matriz()
+
         
 
 
