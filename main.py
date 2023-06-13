@@ -287,7 +287,7 @@ def vetores():
     print("Resultado da projeção ortogonal: ", resultado_proje)
 
 def matriz():
-    escolher = int(input("Soma :\n1 - 2x2 | 2 - 3x3:\nSubtração:\n3 - 2x2 | 4 - 3x3:\nMultiplicação:\n5 - 2x2 | 6 - 3x3: "))
+    escolher = int(input("Soma :\n1 - 2x2 | 2 - 3x3:\nSubtração:\n3 - 2x2 | 4 - 3x3:\nMultiplicação:\n5 - 2x2 | 6 - 3x3:\n7 i Transposta:  "))
 
     if escolher == 1:
         def somaMatriz2x2():
@@ -312,12 +312,15 @@ def matriz():
         def matriz3x3():
             a11_matriz1 = float(input("Valor de a11: "))
             a12_matriz1 = float(input("Valor de a12: "))
-            a13_matriz1 = float(input("valor de a13: "))
+            a13_matriz1 = float(input("Valor de a13: "))
             a21_matriz1 = float(input("Valor de a21: "))
             a22_matriz1 = float(input("Valor de a22: "))
             a23_matriz1 = float(input("Valor de a23: "))
+            a31_matriz1 = float(input("Valor de a31: "))
+            a32_matriz1 = float(input("Valor de a32: "))
+            a33_matriz1 = float(input("Valor de a33: "))
 
-            return [a11_matriz1, a12_matriz1, a13_matriz1, a21_matriz1, a22_matriz1, a23_matriz1]
+            return [a11_matriz1, a12_matriz1, a13_matriz1, a21_matriz1, a22_matriz1, a23_matriz1, a31_matriz1, a32_matriz1, a33_matriz1]
 
         matriz1 = matriz3x3()
         matriz2 = matriz3x3()
@@ -354,10 +357,15 @@ def matriz():
         def subtracaoMatriz3x3():
             a11_matriz1 = float(input("Valor de a11: "))
             a12_matriz1 = float(input("Valor de a12: "))
+            a11_matriz1 = float(input("Valor de a11: "))
+            a12_matriz1 = float(input("Valor de a12: "))
             a13_matriz1 = float(input("Valor de a13: "))
             a21_matriz1 = float(input("Valor de a21: "))
             a22_matriz1 = float(input("Valor de a22: "))
             a23_matriz1 = float(input("Valor de a23: "))
+            a31_matriz1 = float(input("Valor de a31: "))
+            a32_matriz1 = float(input("Valor de a32: "))
+            a33_matriz1 = float(input("Valor de a33: "))
 
             a11_matriz2 = float(input("Valor de a11: "))
             a12_matriz2 = float(input("Valor de a12: "))
@@ -365,6 +373,9 @@ def matriz():
             a21_matriz2 = float(input("Valor de a21: "))
             a22_matriz2 = float(input("Valor de a22: "))
             a23_matriz2 = float(input("Valor de a23: "))
+            a31_matriz2 = float(input("Valor de a31: "))
+            a32_matriz2 = float(input("Valor de a32: "))
+            a33_matriz2 = float(input("Valor de a33: "))
 
             resultado = [
                 a11_matriz1 - a11_matriz2,
@@ -372,13 +383,18 @@ def matriz():
                 a13_matriz1 - a13_matriz2,
                 a21_matriz1 - a21_matriz2,
                 a22_matriz1 - a22_matriz2,
-                a23_matriz1 - a23_matriz2
+                a23_matriz1 - a23_matriz2,
+                a31_matriz1 - a31_matriz2,
+                a32_matriz1 - a32_matriz2,
+                a33_matriz1 - a33_matriz2
             ]
 
             return resultado
+
         resultado_subtracao = subtracaoMatriz3x3()
         print("Resultado da subtração:")
         print(resultado_subtracao)
+
     elif escolher == 5:
         def multiplicacao2x2():
             a11_matriz1 = float(input("Valor de a11: "))
@@ -400,7 +416,64 @@ def matriz():
             return resultado
         resultado_final = multiplicacao2x2()
         print(f"O resultado da multiplicação {resultado_final}")
-            
+    elif escolher == 6:
+        def multiplicacao3x3():
+            a11_matriz1 = float(input("Valor de a11: "))
+            a12_matriz1 = float(input("Valor de a12: "))
+            a13_matriz1 = float(input("Valor de a13: "))
+            a21_matriz1 = float(input("Valor de a21: "))
+            a22_matriz1 = float(input("Valor de a22: "))
+            a23_matriz1 = float(input("Valor de a23: "))
+
+            a11_matriz2 = float(input("Valor de a11: "))
+            a12_matriz2 = float(input("Valor de a12: "))
+            a13_matriz2 = float(input("Valor de a13: "))
+            a21_matriz2 = float(input("Valor de a21: "))
+            a22_matriz2 = float(input("Valor de a22: "))
+            a23_matriz2 = float(input("Valor de a23: "))
+
+            resultado = [
+                a11_matriz1 * a11_matriz2 + a12_matriz1 * a21_matriz2,
+                a11_matriz1 * a12_matriz2 + a12_matriz1 * a22_matriz2,
+                
+                a21_matriz1 * a11_matriz2 + a22_matriz1 * a21_matriz2,
+                a21_matriz1 * a12_matriz2 + a22_matriz1 * a22_matriz2
+            ]
+
+            return resultado
+        resultado_subtracao = subtracaoMatriz3x3()
+        print("Resultado da subtração:")
+        print(resultado_subtracao)
+    elif escolher == 7:
+        def matriz_transposta(matriz):
+            transposta = [
+                matriz[0], matriz[3], matriz[6], 
+                matriz[1], matriz[4], matriz[7],            
+                matriz[2], matriz[5], matriz[8]
+            ]
+            return transposta
+
+        def matriz3x3():
+            a11 = float(input("Valor de a11: "))
+            a12 = float(input("Valor de a12: "))
+            a13 = float(input("Valor de a13: "))
+            a21 = float(input("Valor de a21: "))
+            a22 = float(input("Valor de a22: "))
+            a23 = float(input("Valor de a23: "))
+            a31 = float(input("Valor de a31: "))
+            a32 = float(input("Valor de a32: "))
+            a33 = float(input("Valor de a33: "))
+
+            return [a11, a12, a13, a21, a22, a23, a31, a32, a33]
+
+        matriz = matriz3x3()
+        transposta = matriz_transposta(matriz)
+
+        print("Matriz original:")
+        print(matriz)
+        print("Matriz transposta:")
+        print(transposta)
+
 matriz()
 
         
