@@ -266,10 +266,10 @@ def vetores():
         cos_teta = produto_escalar / (moduloV1 * moduloV2)
         angulo = np.arccos(cos_teta) * 180 / np.pi
         return angulo 
-    # resultado = moduloDeVetores()
-    # angulo = anguloTeta()
-    # print(f"Vetores: {resultado[0]}, {resultado[1]}\nResultado V1: {resultado[2]}\nResultado V2: {resultado[3]}")
-    # print(f"Ângulo entre os vetores: {angulo} graus")
+    resultado = moduloDeVetores()
+    angulo = anguloTeta()
+    print(f"Vetores: {resultado[0]}, {resultado[1]}\nResultado V1: {resultado[2]}\nResultado V2: {resultado[3]}")
+    print(f"Ângulo entre os vetores: {angulo} graus")
 
     def projecaoOrtogonal():
         print("Coloque os valores de w separadamente: ")
@@ -286,7 +286,13 @@ def vetores():
     resultado_proje = projecaoOrtogonal()
     print("Resultado da projeção ortogonal: ", resultado_proje)
 
-vetores()
+def matriz():
+    escolher = input("1 - 2x2 | 2 - 3x3")
+    if escolher == 1:
+        print("Hello word")
+    elif escolher == "2":
+        print("Hello word")
+        
 
 
 
