@@ -1,7 +1,6 @@
 import numpy as np
 import math 
 import tkinter as tk
-from tkinter import messagebox
 
 def calculandoLambda():
     print("TEORIA DAS FILAS \n")
@@ -476,8 +475,96 @@ def matriz():
         print("Matriz transposta:")
         print(transposta)
 
+def correla_person():
+    n = int(input("Digite o tamanho da amostra: "))
 
-# INTERFACES 
+    x = np.zeros(n)
+    y = np.zeros(n)
+
+    for i in range(n):
+        x[i] = float(input("Digite o valor de x{}: ".format(i+1)))
+        y[i] = float(input("Digite o valor de y{}: ".format(i+1)))
+
+        mean_x = np.mean(x)
+        mean_y = np.mean(y)
+        std_x = np.std(x, ddof=1)
+        std_y = np.std(y, ddof=1)
+
+        correlation = np.sum((x - mean_x) * (y - mean_y)) / ((n - 1) * std_x * std_y)
+
+        print("O coeficiente de correlação de Pearson é:", correlation)
+
+def simplex(c, A, b):
+        m, n = A.shape
+
+        # Adicionar variáveis de folga à matriz A
+        A = np.hstack((A, np.eye(m)))
+
+        # Construir a tabela inicial
+        c = np.concatenate((c, np.zeros(m)))
+        tableau = np.vstack((np.hstack((A, b.reshape(-1, 1))), np.hstack((c, 0))))
+
+        while np.any(tableau[-1, :-1] < 0):
+            # Encontrar a coluna pivô
+            col_pivot = np.argmin(tableau[-1, :-1])
+
+            if np.all(tableau[:, col_pivot] <= 0):
+                # Solução ilimitada
+                return None
+
+            # Encontrar a linha pivô
+            row_pivot = np.argmin(tableau[:-1, -1] / tableau[:-1, col_pivot])
+
+            # Atualizar a tabela pivô
+            tableau[row_pivot, :] /= tableau[row_pivot, col_pivot]
+            for i in range(m + 1):
+                if i != row_pivot:
+                    tableau[i, :] -= tableau[i, col_pivot] * tableau[row_pivot, :]
+
+        # Extrair a solução ótima
+        solution = tableau[:-1, -1]
+
+        # Extrair os valores das variáveis de folga
+        slack_variables = tableau[:-1, n:-1]
+
+        return solution, slack_variables
+
+    # Solicitar os valores do problema de programação linear a partir do teclado
+    n = int(input("Digite o número de variáveis: "))
+    m = int(input("Digite o número de restrições: "))
+
+    c = np.zeros(n)
+    A = np.zeros((m, n))
+    b = np.zeros(m)
+
+    print("Digite os coeficientes da função objetivo:")
+    for i in range(n):
+        c[i] = float(input("c[{}]: ".format(i+1)))
+
+    print("Digite os coeficientes das restrições:")
+    for i in range(m):
+        for j in range(n):
+            A[i, j] = float(input("A[{}][{}]: ".format(i+1, j+1)))
+        b[i] = float(input("b[{}]: ".format(i+1)))
+
+    # Chamar a função simplex
+    solution, slack_variables = simplex(c, A, b)
+
+    # Imprimir a solução
+    if solution is not None:
+        print("Solução ótima:")
+        print("Valor da função objetivo:", -solution[-1])
+        for i, x in enumerate(solution[:-1]):
+            print("x{}: {}".format(i+1, x))
+        for i, slack in enumerate(slack_variables.T):
+            print("s{}: {}".format(i+1, slack))
+    else:
+        print("O problema não possui solução ótima.")
+
+simplex()
+    
+
+# WINDOW 
 def tela_teoria_das_filas():
     teoria_filas = tk.Tk() 
     teoria_filas.title("Teoria da filas")
@@ -501,6 +588,9 @@ def tela_matrizes():
 def tela_trigonometria():
     trigonometria = tk.Tk()
     trigonometria.title("Trigonometria")
+
+
+
 # ---------------------------- #
 # ---------- cores ----------- #
 
@@ -521,22 +611,22 @@ window.geometry("300x400")
 window.configure(bg=cor10)
 
 btn_teoria_das_filas = tk.Button(window,height=1, width=15,text="teoria das filas", highlightbackground=cor7, font=("Arial", 12, "bold"), command=tela_teoria_das_filas)
-btn_teoria_das_filas.place(relx=0.5, rely=0.1, anchor=tk.CENTER)
+btn_teoria_das_filas.place(relx=0.5, rely=0.1,)
 
 btn_juros_composto = tk.Button(window,height=1, width=15,text="Juros composto", highlightbackground=cor7, font=("Arial", 12, "bold"), command=tela_juros_composto)
-btn_juros_composto.place(relx=0.5, rely=0.2, anchor=tk.CENTER)
+btn_juros_composto.place(relx=0.5, rely=0.2,)
 
 btn_juros_simples = tk.Button(window,height=1, width=15,text="Juros simples", highlightbackground=cor7, font=("Arial", 12, "bold"), command=tela_juros_simples)
-btn_juros_simples.place(relx=0.5, rely=0.3, anchor=tk.CENTER)
+btn_juros_simples.place(relx=0.5, rely=0.3,)
 
 btn_vetores = tk.Button(window,height=1, width=15,text="Vetores", highlightbackground=cor7, font=("Arial", 12, "bold"), command=tela_vetores)
-btn_vetores.place(relx=0.5, rely=0.4, anchor=tk.CENTER)
+btn_vetores.place(relx=0.5, rely=0.4,)
 
 btn_matrizes = tk.Button(window,height=1, width=15,text="Matriz", highlightbackground=cor7, font=("Arial", 12, "bold"), command=tela_matrizes)
-btn_matrizes.place(relx=0.5, rely=0.5, anchor=tk.CENTER)
+btn_matrizes.place(relx=0.5, rely=0.5,)
 
 btn_trigonometria = tk.Button(window,height=1, width=15,text="Trigonometria", highlightbackground=cor7, font=("Arial", 12, "bold"), command=tela_trigonometria)
-btn_trigonometria.place(relx=0.5, rely=0.6, anchor=tk.CENTER)
+btn_trigonometria.place(relx=0.5, rely=0.6,)
 
 window.mainloop()
 
