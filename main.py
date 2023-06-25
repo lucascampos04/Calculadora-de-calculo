@@ -1,7 +1,3 @@
-import numpy as np
-import math 
-import tkinter as tk
-
 def calculandoLambda():
     print("TEORIA DAS FILAS \n")
     print("Vamos começar encontrando o valor de lambda. \nPara encontrar o valor de lambda, eu irei precisar do número de chegadas e do tempo total.")
@@ -494,71 +490,7 @@ def correla_person():
 
         print("O coeficiente de correlação de Pearson é:", correlation)
 
-# WINDOW 
-def tela_teoria_das_filas():
-    teoria_filas = tk.Tk() 
-    teoria_filas.title("Teoria da filas")
 
-def tela_juros_composto():
-    juros_composto = tk.Tk()
-    juros_composto.title("Juros composto")
-
-def tela_juros_simples():
-    juros_composto = tk.Tk()
-    juros_composto.title("Juros composto")
-
-def tela_vetores():
-    vetores = tk.Tk()
-    vetores.title("Vetores")
-
-def tela_matrizes():
-    matrizes = tk.Tk()
-    matrizes.title("Matrizes")
-
-def tela_trigonometria():
-    trigonometria = tk.Tk()
-    trigonometria.title("Trigonometria")
-
-
-
-# ---------------------------- #
-# ---------- cores ----------- #
-
-cor1 = "#FF0000"  # Vermelho
-cor2 = "#00FF00"  # Verde
-cor3 = "#0000FF"  # Azul
-cor4 = "#FFFF00"  # Amarelo
-cor5 = "#FF00FF"  # Magenta
-cor6 = "#00FFFF"  # Ciano
-cor7 = "#FFA500"  # Laranja
-cor8 = "#800080"  # Roxo
-cor9 = "#008000"  # Verde Escuro
-cor10 = "#000080"  # Azul Escuro
-
-window = tk.Tk()
-window.title("Calculadora")
-window.geometry("300x400")
-window.configure(bg=cor10)
-
-btn_teoria_das_filas = tk.Button(window,height=1, width=15,text="teoria das filas", highlightbackground=cor7, font=("Arial", 12, "bold"), command=tela_teoria_das_filas)
-btn_teoria_das_filas.place(relx=0.5, rely=0.1,)
-
-btn_juros_composto = tk.Button(window,height=1, width=15,text="Juros composto", highlightbackground=cor7, font=("Arial", 12, "bold"), command=tela_juros_composto)
-btn_juros_composto.place(relx=0.5, rely=0.2,)
-
-btn_juros_simples = tk.Button(window,height=1, width=15,text="Juros simples", highlightbackground=cor7, font=("Arial", 12, "bold"), command=tela_juros_simples)
-btn_juros_simples.place(relx=0.5, rely=0.3,)
-
-btn_vetores = tk.Button(window,height=1, width=15,text="Vetores", highlightbackground=cor7, font=("Arial", 12, "bold"), command=tela_vetores)
-btn_vetores.place(relx=0.5, rely=0.4,)
-
-btn_matrizes = tk.Button(window,height=1, width=15,text="Matriz", highlightbackground=cor7, font=("Arial", 12, "bold"), command=tela_matrizes)
-btn_matrizes.place(relx=0.5, rely=0.5,)
-
-btn_trigonometria = tk.Button(window,height=1, width=15,text="Trigonometria", highlightbackground=cor7, font=("Arial", 12, "bold"), command=tela_trigonometria)
-btn_trigonometria.place(relx=0.5, rely=0.6,)
-
-window.mainloop()
 
         
 
